@@ -73,7 +73,7 @@
                         </DockPanel>
                         <DockPanel>
                         <GroupBox Header="Ai" DockPanel.Dock="Top">
-                            <DataGrid x:Name="Ai" MinHeight="80" CanUserAddRows="False"/>
+                            <DataGrid x:Name="Ai" MinHeight="80" CanUserAddRows="False" CellEditEnding="Ai_CellEditEnding"/>
                         </GroupBox>
                             <GroupBox Header="Bi" DockPanel.Dock="Top">
                                 <DataGrid x:Name="Bi" MinHeight="80" IsReadOnly="True"/>

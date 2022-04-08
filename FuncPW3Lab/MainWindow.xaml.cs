@@ -98,10 +98,11 @@ namespace FuncPW3Lab
                 Ex4M.Focus();
                 return;
             }
-            int[] mas = XFiller.XFillRnd(m);
-            Ai.ItemsSource = VisualArray.ToDataTable(mas).DefaultView;
-            Bi.ItemsSource = VisualArray.ToDataTable(From1To5.Ex4CreateMas(mas)).DefaultView;
+            _mas = XFiller.XFillRnd(m);
+            Ai.ItemsSource = VisualArray.ToDataTable(_mas).DefaultView;
+            Bi.ItemsSource = VisualArray.ToDataTable(From1To5.Ex4CreateMas(_mas)).DefaultView;
         }
+        int[] _mas;
 
         private void Ex5Fill_Click(object sender, RoutedEventArgs e)
         {
@@ -123,6 +124,19 @@ namespace FuncPW3Lab
         {
             MessageBox.Show("Разработчик: Лопаткин Сергей ИСП-31 (GitHub.Name = \"Hapro Bishop\")", "О программе",
                 MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Ai_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            int iColumn = e.Column.DisplayIndex;
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                try
+                {
+                    _mas[iColumn] = Convert.ToInt32(((TextBox)e.EditingElement).Text);
+                }
+                catch { }
+            }
         }
     }
 }
