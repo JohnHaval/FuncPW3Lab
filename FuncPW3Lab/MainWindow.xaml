@@ -1,0 +1,109 @@
+﻿<Window x:Class="FuncPW3Lab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuncPW3Lab"
+        mc:Ignorable="d"
+        Title="FuncPW3Lab" MinHeight="400" MinWidth="400" Icon="LogoIco.ico" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="Задание 1">
+                <DockPanel LastChildFill="False">
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem x:Name="Ex1FindY" Header="_Найти" Click="Ex1FindY_Click"/>
+                        <MenuItem Header="_О программе"/>
+                    </Menu>
+                    <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                        <Label Content="x="/>
+                        <TextBox x:Name="Ex1X" MinWidth="100" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение X" BorderBrush="Red"/>
+                        <Label Content="y="/>
+                        <TextBox x:Name="Ex1Y" MinWidth="100" Margin="3" IsReadOnly="True" ToolTip="Здесь будет отображено значение 'y'"/>
+                    </DockPanel>
+                    <Image Source="Funcs\1.png" Width="400" Height="100" DockPanel.Dock="Top"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 2">
+                <DockPanel LastChildFill="False">
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem x:Name="Ex2FindY" Header="_Найти" Click="Ex2FindY_Click"/>
+                        <MenuItem Header="_О программе"/>
+                    </Menu>
+                    <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                        <Label Content="x="/>
+                        <TextBox x:Name="Ex2X" MinWidth="100" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение X" BorderBrush="Red"/>
+                        <Label Content="y="/>
+                        <TextBox x:Name="Ex2Y" MinWidth="100" Margin="3" IsReadOnly="True" ToolTip="Здесь будет отображено значение 'y'"/>
+                    </DockPanel>
+                    <Image Source="Funcs\2.png" Width="400" Height="100" DockPanel.Dock="Top"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 3">
+                <DockPanel LastChildFill="False">
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem x:Name="Ex3FindS" Header="_Найти" Click="Ex3FindS_Click"/>
+                        <MenuItem Header="_О программе"/>
+                    </Menu>
+                    <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                        <Label Content="x="/>
+                        <TextBox x:Name="Ex3X" MinWidth="100" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение X" BorderBrush="Red"/>
+                        <Label Content="n="/>
+                        <TextBox x:Name="Ex3N" MinWidth="100" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение n" BorderBrush="Red"/>
+                        <Label Content="S="/>
+                        <TextBox x:Name="Ex3S" MinWidth="100" Margin="3" IsReadOnly="True" ToolTip="Здесь будет отображено значение S"/>
+                    </DockPanel>
+                    <Image Source="Funcs\3.png" Width="400" Height="100"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 4">
+                <DockPanel LastChildFill="False">
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem x:Name="Ex4CreateMas" Header="_Сформировать"/>
+                        <MenuItem Header="_О программе"/>
+                    </Menu>
+                    <DockPanel DockPanel.Dock="Top">
+                        <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                            <DockPanel LastChildFill="False" DockPanel.Dock="Bottom">
+                                <Label Content="M="/>
+                                <TextBox x:Name="Ex4M" Width="100" Height="25" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение M(Ограничение размера и диапазона 1-M)" BorderBrush="Red"/>
+                            </DockPanel>
+                            <GroupBox Header="Задание" Height="90">
+                                <Image Source="Funcs\4.png"/>
+                            </GroupBox>
+                        </DockPanel>
+                        <DockPanel>
+                        <GroupBox Header="Ai" DockPanel.Dock="Top">
+                            <DataGrid x:Name="Ai" MinHeight="80"/>
+                        </GroupBox>
+                            <GroupBox Header="Bi" DockPanel.Dock="Top">
+                                <DataGrid x:Name="Bi" MinHeight="80"/>
+                            </GroupBox>
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 5">
+                <DockPanel>
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem x:Name="Ex5Fill" Header="_Заполнить"/>
+                        <MenuItem Header="_О программе"/>
+                    </Menu>
+                    <DockPanel DockPanel.Dock="Top">
+                        <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                            <GroupBox Header="Задание" Height="90" DockPanel.Dock="Top">
+                                <Image Source="Funcs\5.png"/>
+                            </GroupBox>
+                            <DockPanel LastChildFill="False" DockPanel.Dock="Bottom">
+                            <Label Content="M="/>
+                                <TextBox x:Name="Ex5M" Width="100" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение M(Ограничение размера и диапазона 1-M)" BorderBrush="Red"/>
+                            </DockPanel>
+                        </DockPanel>
+                        <GroupBox Header="Aij">
+                            <DataGrid x:Name="Aij" MinHeight="150"/>
+                        </GroupBox>
+                    </DockPanel>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
