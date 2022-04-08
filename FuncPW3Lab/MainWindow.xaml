@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FuncPW3Lab"
         mc:Ignorable="d"
-        Title="FuncPW3Lab" MinHeight="400" MinWidth="400" Icon="LogoIco.ico" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+        Title="FuncPW3Lab" MinHeight="400" MinWidth="450" Icon="LogoIco.ico" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <DockPanel>
         <TabControl>
             <TabItem Header="Задание 1">
                 <DockPanel LastChildFill="False">
                     <Menu DockPanel.Dock="Top">
                         <MenuItem x:Name="Ex1FindY" Header="_Найти" Click="Ex1FindY_Click"/>
-                        <MenuItem Header="_О программе"/>
+                        <MenuItem x:Name="AboutProgram" Header="_О программе" Click="AboutProgram_Click"/>
                     </Menu>
                     <DockPanel LastChildFill="False" DockPanel.Dock="Top">
                         <Label Content="x="/>
@@ -27,7 +27,7 @@
                 <DockPanel LastChildFill="False">
                     <Menu DockPanel.Dock="Top">
                         <MenuItem x:Name="Ex2FindY" Header="_Найти" Click="Ex2FindY_Click"/>
-                        <MenuItem Header="_О программе"/>
+                        <MenuItem Header="_О программе" Click="AboutProgram_Click"/>
                     </Menu>
                     <DockPanel LastChildFill="False" DockPanel.Dock="Top">
                         <Label Content="x="/>
@@ -42,7 +42,7 @@
                 <DockPanel LastChildFill="False">
                     <Menu DockPanel.Dock="Top">
                         <MenuItem x:Name="Ex3FindS" Header="_Найти" Click="Ex3FindS_Click"/>
-                        <MenuItem Header="_О программе"/>
+                        <MenuItem Header="_О программе" Click="AboutProgram_Click"/>
                     </Menu>
                     <DockPanel LastChildFill="False" DockPanel.Dock="Top">
                         <Label Content="x="/>
@@ -58,14 +58,14 @@
             <TabItem Header="Задание 4">
                 <DockPanel LastChildFill="False">
                     <Menu DockPanel.Dock="Top">
-                        <MenuItem x:Name="Ex4CreateMas" Header="_Сформировать"/>
-                        <MenuItem Header="_О программе"/>
+                        <MenuItem x:Name="Ex4CreateMas" Header="_Сформировать" Click="Ex4CreateMas_Click"/>
+                        <MenuItem Header="_О программе" Click="AboutProgram_Click"/>
                     </Menu>
                     <DockPanel DockPanel.Dock="Top">
                         <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                             <DockPanel LastChildFill="False" DockPanel.Dock="Bottom">
                                 <Label Content="M="/>
-                                <TextBox x:Name="Ex4M" Width="100" Height="25" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение M(Ограничение размера и диапазона 1-M)" BorderBrush="Red"/>
+                                <TextBox x:Name="Ex4M" Width="100" Margin="3" MaxLength="5" ToolTip="Здесь необходимо ввести значение M(Ограничение размера и диапазона 1-M)" BorderBrush="Red"/>
                             </DockPanel>
                             <GroupBox Header="Задание" Height="90">
                                 <Image Source="Funcs\4.png"/>
@@ -73,10 +73,10 @@
                         </DockPanel>
                         <DockPanel>
                         <GroupBox Header="Ai" DockPanel.Dock="Top">
-                            <DataGrid x:Name="Ai" MinHeight="80"/>
+                            <DataGrid x:Name="Ai" MinHeight="80" CanUserAddRows="False"/>
                         </GroupBox>
                             <GroupBox Header="Bi" DockPanel.Dock="Top">
-                                <DataGrid x:Name="Bi" MinHeight="80"/>
+                                <DataGrid x:Name="Bi" MinHeight="80" IsReadOnly="True"/>
                             </GroupBox>
                         </DockPanel>
                     </DockPanel>
@@ -85,8 +85,8 @@
             <TabItem Header="Задание 5">
                 <DockPanel>
                     <Menu DockPanel.Dock="Top">
-                        <MenuItem x:Name="Ex5Fill" Header="_Заполнить"/>
-                        <MenuItem Header="_О программе"/>
+                        <MenuItem x:Name="Ex5Fill" Header="_Заполнить" Click="Ex5Fill_Click"/>
+                        <MenuItem Header="_О программе" Click="AboutProgram_Click"/>
                     </Menu>
                     <DockPanel DockPanel.Dock="Top">
                         <DockPanel DockPanel.Dock="Top" LastChildFill="False">
@@ -99,7 +99,7 @@
                             </DockPanel>
                         </DockPanel>
                         <GroupBox Header="Aij">
-                            <DataGrid x:Name="Aij" MinHeight="150"/>
+                            <DataGrid x:Name="Aij" MinHeight="150" IsReadOnly="True"/>
                         </GroupBox>
                     </DockPanel>
                 </DockPanel>

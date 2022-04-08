@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExFuncs;
+using AllXFiller;
+using DataGridFiller;
 
 namespace FuncPW3Lab
 {
@@ -47,7 +49,7 @@ namespace FuncPW3Lab
         {
             try
             {
-                Ex2Y.Text = From1To5.Ex1FindY(Convert.ToDouble(Ex2X.Text)).ToString();
+                Ex2Y.Text = From1To5.Ex2FindY(Convert.ToDouble(Ex2X.Text)).ToString();
             }
             catch
             {
@@ -81,6 +83,46 @@ namespace FuncPW3Lab
                 return;
             }
             Ex3S.Text = From1To5.Ex3FindS(x, n).ToString();
+        }
+
+        private void Ex4CreateMas_Click(object sender, RoutedEventArgs e)
+        {
+            int m;
+            try
+            {
+                m = Convert.ToInt32(Ex4M.Text);
+            }
+            catch
+            {
+                BadValMessage();
+                Ex4M.Focus();
+                return;
+            }
+            int[] mas = XFiller.XFillRnd(m);
+            Ai.ItemsSource = VisualArray.ToDataTable(mas).DefaultView;
+            Bi.ItemsSource = VisualArray.ToDataTable(From1To5.Ex4CreateMas(mas)).DefaultView;
+        }
+
+        private void Ex5Fill_Click(object sender, RoutedEventArgs e)
+        {
+            int m;
+            try
+            {
+                m = Convert.ToInt32(Ex5M.Text);
+            }
+            catch
+            {
+                BadValMessage();
+                Ex5M.Focus();
+                return;
+            }
+            Aij.ItemsSource = VisualArray.ToDataTable(From1To5.Ex5GetMatrix(m)).DefaultView;
+        }
+
+        private void AboutProgram_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Разработчик: Лопаткин Сергей ИСП-31 (GitHub.Name = \"Hapro Bishop\")", "О программе",
+                MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

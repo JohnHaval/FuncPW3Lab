@@ -28,5 +28,23 @@ namespace DataGridFiller
             res.Rows.Add(row);
             return res;
         }
+        public static DataTable ToDataTable<T>(T[,] mas)
+        {
+            var res = new DataTable();
+            for (int j = 0; j < mas.GetLength(1); j++)
+            {
+                res.Columns.Add("col" + (j + 1), typeof(T));
+            }
+            for (int i = 0; i < mas.GetLength(0); i++)
+            {
+                var row = res.NewRow();
+                for (int j = 0; j < mas.GetLength(1); j++)
+                {
+                    row[j] = mas[i,j];
+                }
+                res.Rows.Add(row);
+            }
+            return res;
+        }
     }
 }

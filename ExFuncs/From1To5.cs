@@ -49,7 +49,7 @@ namespace ExFuncs
         /// </summary>
         /// <param name="n"></param>
         /// <returns>matrix - полученный двумерный массив, представляющий собой матрицу</returns>
-        public static int[,] GetMatrix(int n)
+        public static int[,] Ex5GetMatrix(int n)
         {
             int[,] matrix = new int[n, n];
             for (int i = 0; i < matrix.GetLength(0); i++)
